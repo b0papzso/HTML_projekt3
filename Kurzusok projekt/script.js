@@ -34,6 +34,11 @@ function showCourseAdd()
 }
 
 function addCourse(){
+    if (document.getElementById("courseName").value == "" || /\s/g.test(document.getElementById("courseName").value))
+    {
+        alert("Nem adott meg semmit kurzusnévnek!")
+        return
+    }
     fetch(url, {
      
         method: "POST",
@@ -157,7 +162,11 @@ function modifyStudentShow(id, studentId) {
 
 function modifyStudent(id, studentId)
 {
-    
+    if (document.getElementById("studentNameModified").value == "" || /\s/g.test(document.getElementById("studentNameModified").value))
+    {
+        alert("Nem adott meg semmit diáknévnek!")
+        return
+    }
     console.log(id)
     console.log(studentId)
     var newName = document.getElementById("studentNameModified").value
@@ -200,6 +209,11 @@ function showStudentAdd()
 }
 
 function addStudent(){
+    if (document.getElementById("studentName").value == "" || /\s/g.test(document.getElementById("studentName").value))
+    {
+        alert("Nem adott meg semmit diáknévnek!")
+        return
+    }
     fetch(urlStudent, {
      
         // Metódus hozzáadása
